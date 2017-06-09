@@ -1,0 +1,26 @@
+.navbar {
+  margin-bottom: 20px;
+}
+
+#logo {
+  font-family: fantasy;
+  color: blueviolet;
+  padding: 20px 20px;
+  border-radius: 4px;
+  background: #000;
+  margin: 20px 20px;
+}
+
+#username {
+  width: 225px
+}
+
+#password {
+  width: 225px
+}
+
+#author {
+  color: blueviolet;
+  margin-top: -10px;
+  margin-left: 25px;
+}
