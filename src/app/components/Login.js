@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export class Login extends React.Component {
   render() {
@@ -9,7 +10,8 @@ export class Login extends React.Component {
         <br />
         <input id="password" type="password" name="password" placeholder="Password" />
         <br />
-        <p className="lead"> continue without signing in </p> <button type="btn btn-primary"> Continue </button>
+        <p className="lead"> continue without signing in </p>
+        <Link to="/browse"> <button> Continue </button> </Link>
       </div>
     );
   }

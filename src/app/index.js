@@ -10,6 +10,7 @@ import { Card } from './components/ProfileCard';
 import { Post } from './components/Post';
 import { Profile } from './components/Profile';
 import { Browse } from './components/Browse';
+import { Admin } from './components/Admin';
 
 class App extends React.Component {
   render() {
@@ -21,6 +22,7 @@ class App extends React.Component {
             <div className="col-xs-10 col-xs-offset-1">
               <Route exact path="/" component={Login} />
               <Route exact path="/browse" component={Browse} />
+              <Route exact path="/admin" component={Admin} />
               <Route exact path="/profile" component={Profile} />
             </div>
           </div>
