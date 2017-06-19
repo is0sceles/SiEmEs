@@ -2,7 +2,9 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { logger } from 'redux-logger';
 
 /* Components */
 import { Header } from './components/Header';
@@ -13,7 +15,7 @@ import { Profile } from './components/Profile';
 import { Browse } from './components/Browse';
 import { Admin } from './components/Admin';
 
-import { store } from '../store/store';
+// import store from '../store/store';
 
 class App extends React.Component {
   render() {
@@ -24,7 +26,7 @@ class App extends React.Component {
           <div className="row">
             <div className="col-xs-10 col-xs-offset-1">
               <Route exact path="/" component={Login} />
-              <Route exact path="/browse" component={Browse} />
+              <Route exact path="/browse" component={Browse} posts={this.props} />
               <Route exact path="/admin" component={Admin} />
               <Route exact path="/profile" component={Profile} />
             </div>
@@ -35,7 +37,35 @@ class App extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  user: state.userReducer,
+  posts: state.postsReducer,
+});
 
+const mapDispatchToProps = dispatch => ({
+  setName: (name) => {
+    dispatch(
+      {
+        type: 'SET_NAME',
+        payload: name,
+      });
+  },
+});
+
+const store = createStore(
+  combineReducers({ /* userReducer, postsReducer*/ }),
+  {},
+  applyMiddleware(logger),
+  );
+
+store.subscribe(() => {
+  console.log('store updated');
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+// mount to DOM
 render((
   <Provider store={store}>
     <BrowserRouter>

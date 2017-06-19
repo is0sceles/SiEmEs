@@ -2,17 +2,12 @@ import React from 'react';
 import { Post } from './Post';
 
 export class Browse extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      emptyList: false,
-      posts: [1, 2, 3, 4, 5],
-    };
+  constructor() {
+    super();
   }
 
   render() {
-    if (this.state.emptyList === true) {
+    if (this.props.posts === true) {
       return (
         <div>
           <h3> Sorry, there are no items to list </h3>
@@ -21,7 +16,8 @@ export class Browse extends React.Component {
     }
     return (
       <div>
-        {this.state.posts.map(i => <Post />)}
+        {/* this.props.postList.map(i => <Post />)*/}
+        <Post  />
       </div>
     );
   }

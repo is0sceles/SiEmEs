@@ -2,6 +2,10 @@ import React from 'react';
 import { ImageUpload } from './ImageUpload';
 
 export class Post extends React.Component {
+  constructor() {
+    super();
+  }
+
   render() {
     return (
       <div>

@@ -2,17 +2,10 @@ import React from 'react';
 import { ImageUpload } from './ImageUpload';
 
 export class NewPost extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      desc: '',
-      text: '',
-      author: '',
-      date: new Date(),
-      image: '',
-    };
+  constructor() {
+    super();
   }
+
 
   render() {
     return (
