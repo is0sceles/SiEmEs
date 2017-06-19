@@ -28,7 +28,7 @@ class App extends React.Component {
               <Route exact path="/" component={Login} />
               <Route exact path="/browse" component={Browse} posts={this.props} />
               <Route exact path="/admin" component={Admin} />
-              <Route exact path="/profile" component={Profile} />
+              <Route path="/profile" component={Profile} />
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@ const store = createStore(
   );
 
 store.subscribe(() => {
-  console.log('store updated');
+  console.log('store updated', store.getState());
 });
 
 
