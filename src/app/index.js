@@ -1,4 +1,4 @@
-/* React */
+/** React- Redux */
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { Provider, connect } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
 
-/* Components */
+/** Components */
 import { Header } from './components/Header';
 import { Login } from './components/Login';
 import { Card } from './components/ProfileCard';
@@ -15,8 +15,9 @@ import { Profile } from './components/Profile';
 import { Browse } from './components/Browse';
 import { Admin } from './components/Admin';
 
-// import store from '../store/store';
+import initState from '../reducers/initialState';
 
+/** App Container */
 class App extends React.Component {
   render() {
     return (
@@ -26,7 +27,7 @@ class App extends React.Component {
           <div className="row">
             <div className="col-xs-10 col-xs-offset-1">
               <Route exact path="/" component={Login} />
-              <Route exact path="/browse" component={Browse} posts={this.props} />
+              <Route exact path="/browse" component={Browse} posts={this.props.posts} />
               <Route exact path="/admin" component={Admin} />
               <Route path="/profile" component={Profile} />
             </div>
@@ -37,6 +38,7 @@ class App extends React.Component {
   }
 }
 
+/** mapStateToProps & mapDispatchToProps */
 const mapStateToProps = state => ({
   user: state.userReducer,
   posts: state.postsReducer,
@@ -52,6 +54,7 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
+/** CreateStore */
 const store = createStore(
   combineReducers({ /* userReducer, postsReducer*/ }),
   {},
@@ -63,9 +66,7 @@ store.subscribe(() => {
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-// mount to DOM
+/** Mount DOM */
 render((
   <Provider store={store}>
     <BrowserRouter>
@@ -73,3 +74,8 @@ render((
     </BrowserRouter>
   </Provider>), document.querySelector('#app'),
 );
+
+/** Connect */
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+console.log('initial State is ', initState); // deleteMe

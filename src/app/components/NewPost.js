@@ -1,12 +1,11 @@
 import React from 'react';
 import { ImageUpload } from './ImageUpload';
 
+/** New Post Component */
 export class NewPost extends React.Component {
   constructor() {
     super();
   }
-
-
   render() {
     return (
       <div>

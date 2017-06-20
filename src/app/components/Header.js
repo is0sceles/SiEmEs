@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export class Header extends React.Component {
   render() {
     return (
-      <div className="navbar navbar-default">
+      <div className="navbar navbar-inverse">
         <div className="container">
           <div className="navbar-header">
             <ul className="nav navbar-nav">

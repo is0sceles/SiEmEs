@@ -1,11 +1,11 @@
 import React from 'react';
 import { Post } from './Post';
 
+/** Browse Component */
 export class Browse extends React.Component {
   constructor() {
     super();
   }
-
   render() {
     if (this.props.posts === true) {
       return (
@@ -17,7 +17,7 @@ export class Browse extends React.Component {
     return (
       <div>
         {/* this.props.postList.map(i => <Post />)*/}
-        <Post  />
+        <Post />
       </div>
     );
   }

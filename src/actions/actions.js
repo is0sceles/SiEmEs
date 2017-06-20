@@ -1,5 +1,7 @@
 import * as types from './actionTypes';
 
+/** Actions */
+
 export function itemIsErrored(bool) {
   return {
     type: types.ITEMS_IS_ERRORED,

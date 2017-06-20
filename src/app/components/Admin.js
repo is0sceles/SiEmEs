@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+/** Admin Component */
 export class Admin extends React.Component {
   render() {
     return (

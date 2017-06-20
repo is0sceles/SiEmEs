@@ -1,5 +1,6 @@
 import React from 'react';
 
+/** User Profile Summary Card Component */
 export class Card extends React.Component {
   render() {
     return (
