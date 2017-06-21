@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider, connect } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { logger } from 'redux-logger';
 
 /** Components */
@@ -16,6 +16,7 @@ import { Browse } from './components/Browse';
 import { Admin } from './components/Admin';
 
 import initState from '../reducers/initialState';
+// import { combineReducers } from '../reducers';
 
 /** App Container */
 class App extends React.Component {
@@ -27,7 +28,7 @@ class App extends React.Component {
           <div className="row">
             <div className="col-xs-10 col-xs-offset-1">
               <Route exact path="/" component={Login} />
-              <Route exact path="/browse" component={Browse} posts={this.props.posts} />
+              <Route exact path="/browse" component={Browse} />
               <Route exact path="/admin" component={Admin} />
               <Route path="/profile" component={Profile} />
             </div>
@@ -55,11 +56,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 /** CreateStore */
-const store = createStore(
-  combineReducers({ /* userReducer, postsReducer*/ }),
-  {},
-  applyMiddleware(logger),
-  );
+const store = createStore(combineReducers({}), compose(
+    applyMiddleware(logger),
+    window.devToolsExtention ? window.devToolsExtention() : f => f,
+  ));
 
 store.subscribe(() => {
   console.log('store updated', store.getState());

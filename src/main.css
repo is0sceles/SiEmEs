@@ -1,7 +1,44 @@
+/* App */
 .navbar {
+  border-radius: 0;
   margin-bottom: 20px;
 }
 
+button {
+    border: none;
+    outline: 0;
+    justify-content: center;
+    padding: 8px;
+    color: white;
+    background-color: #2f4f4f;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+    width: 130px;
+    display: flex;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+button:hover, a:hover {
+    background: #5f9ea0;
+}
+
+/* Login */
+#loginPanel {
+  width: 468px;
+  margin: 25% auto;
+}
+
+p.continue {
+  margin-top: 20px;
+}
 #username {
   width: 100%;
 }
@@ -10,6 +47,7 @@
   width: 100%;
 }
 
+/* image backgrounds start #000 */
 img {
   background: #000;
 }
@@ -28,7 +66,18 @@ img {
 }
 
 #profileImage {
-  width: 100%;
+  width: 50%;
+  border-radius: 50%;
+  height: 230px;
+}
+
+#stats {
+  display: flex;
+}
+
+#posts {
+  display: flex;
+  font-weight: 100;
 }
 
 .title {
@@ -36,30 +85,12 @@ img {
     font-size: 18px;
 }
 
-button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 14px;
-}
-
-a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-}
-
-button:hover, a:hover {
-    opacity: 0.7;
-}
-
 textarea {
   height: 100%;
   width: 100%;
+}
+
+/* Image upload */
+img {
+  width: 468px;
 }

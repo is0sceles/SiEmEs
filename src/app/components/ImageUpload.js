@@ -28,11 +28,46 @@ export class ImageUpload extends React.Component {
     reader.readAsDataURL(file);
   }
 
+  _handleImageCancel(e) {
+    e.preventDefault();
+
+    this.setState({
+      imagePreviewUrl: '',
+      file: '',
+    });
+
+    /** remove from localStorage */
+    window.localStorage.removeItem('file');
+    console.log('cancel', window.localStorage);
+  }
+
+  _handleImageSave(e) {
+    e.preventDefault();
+
+    /** save to localStorage */
+    window.localStorage.file = this.state.imagePreviewUrl;
+    console.log('save', window.localStorage);
+  }
+
   render() {
     const { imagePreviewUrl } = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} />);
+      $imagePreview = (
+        <div>
+          <img src={imagePreviewUrl} />
+          <button
+            className="cancelButton"
+            type="submit"
+            onClick={e => this._handleImageCancel(e)}
+          >Cancel</button>
+          <button
+            className="saveImageButton"
+            type="submit"
+            onClick={e => this._handleImageSave(e)}
+          >Save</button>
+        </div>
+        );
     } else {
       $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
     }

@@ -15,7 +15,7 @@ export class Post extends React.Component {
             <p> Description/ Cateogry </p>
             <p> author </p> <p> date() </p>
             <textarea />
-            <button type="btn btn-primary"> Save </button>
+            <button type="btn btn-primary" id="saveButton"> Save </button>
             <hr />
             <ImageUpload />
           </div>

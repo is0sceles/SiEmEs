@@ -10,9 +10,9 @@ export class Card extends React.Component {
           <h1> Orko </h1>
           <p className="title">Trollan & Wizard </p>
           <hr />
-          <p>Stats</p>
+          <p id="stats">Stats</p>
           <hr />
-          <p>Posts: {3} </p>
+          <p id="posts">Posts: {3} </p>
           <p><button>Contact</button></p>
         </div>
       </div>
