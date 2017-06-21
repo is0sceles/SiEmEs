@@ -1,7 +1,12 @@
+body {
+  font-family: 'Bubbler One', sans-serif;
+}
+
 /* App */
 .navbar {
   border-radius: 0;
   margin-bottom: 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 button {
@@ -30,14 +35,24 @@ button:hover, a:hover {
     background: #5f9ea0;
 }
 
+/* Admin */
+#admin {
+  font-family: 'Frijole', cursive;
+}
+
 /* Login */
 #loginPanel {
   width: 468px;
   margin: 25% auto;
 }
 
+.signIn {
+  font-family: 'Crushed', cursive;
+}
+
 p.continue {
   margin-top: 20px;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 #username {
   width: 100%;
