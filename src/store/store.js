@@ -1,11 +1,5 @@
 // import { createStore } from 'react-redux'
 
-// const store = createStore(
-//   combineReducers({ userReducer, postsReducer }),
-//   {},
-//   applyMiddleware(logger()),
-//   );
-
 // const store = {
 //   posts: true,
 //   postList: [1, 2, 3, 4, 5],

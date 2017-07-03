@@ -105,7 +105,20 @@ textarea {
   width: 100%;
 }
 
+/* New Post */
+.newPost hr {
+  margin-top: 50px;
+}
+
 /* Image upload */
 img {
   width: 468px;
+}
+
+button.cancelButton {
+  background: #8b0000;
+}
+
+button.cancelButton:hover {
+  background: #b22222
 }

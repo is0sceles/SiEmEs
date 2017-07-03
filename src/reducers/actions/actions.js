@@ -1,6 +1,14 @@
 import * as types from './actionTypes';
+// import data from db
 
 /** Actions */
+
+export function getUser() {
+  // return dispatch () {
+  //   // fetch and handle user data
+
+  // };
+}
 
 export function itemIsErrored(bool) {
   return {

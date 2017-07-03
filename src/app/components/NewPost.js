@@ -10,10 +10,10 @@ export class NewPost extends React.Component {
     return (
       <div>
         <div className="card">
-          <div className="contain">
+          <div className="contain newPost">
             <h4> TItle </h4>
             <p> Description/ Cateogry </p>
-            <p> author </p> <p> date() </p>
+            <p> Author </p> <p> Date: {new Date()} </p>
             <textarea />
             <button type="btn btn-primary"> Save </button>
             <hr />

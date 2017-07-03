@@ -6,12 +6,6 @@ export class ImageUpload extends React.Component {
     this.state = { file: '', imagePreviewUrl: '' };
   }
 
-  _handleSubmit(e) {
-    e.preventDefault();
-    // TODO: do something with -> this.state.file
-    console.log('handle uploading-', this.state.file);
-  }
-
   _handleImageChange(e) {
     e.preventDefault();
 
@@ -65,7 +59,7 @@ export class ImageUpload extends React.Component {
             className="saveImageButton"
             type="submit"
             onClick={e => this._handleImageSave(e)}
-          >Save</button>
+          >Upload Image</button>
         </div>
         );
     } else {
@@ -80,11 +74,6 @@ export class ImageUpload extends React.Component {
             type="file"
             onChange={e => this._handleImageChange(e)}
           />
-          <button
-            className="submitButton"
-            type="submit"
-            onClick={e => this._handleSubmit(e)}
-          >Upload Image</button>
         </form>
         <div className="imgPreview">
           {$imagePreview}

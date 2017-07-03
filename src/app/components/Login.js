@@ -13,6 +13,7 @@ export class Login extends React.Component {
         <br />
         <p className="continue"> continue without signing in </p>
         <Link to="/browse"> <button> Continue </button> </Link>
+        <Link to="/browse"> <button> Sign in </button> </Link>
       </div>
     );
   }

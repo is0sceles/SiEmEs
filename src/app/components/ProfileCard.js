@@ -13,7 +13,7 @@ export class Card extends React.Component {
           <p id="stats">Stats</p>
           <hr />
           <p id="posts">Posts: {3} </p>
-          <p><button>Contact</button></p>
+          <p><button>Edit</button></p>
         </div>
       </div>
     );
