@@ -109,6 +109,28 @@ textarea {
 .newPost hr {
   margin-top: 50px;
 }
+/* Post */
+
+.postImage {
+    height: 200px;
+    width: 200px;
+    float: left;
+    display: inline;
+    position: relative;
+    background: #333333;
+}
+
+.postAuthor {
+  width: 100%;
+}
+
+.postTags {
+  width: 100%;
+}
+
+.postTitle {
+  width: 100%;
+}
 
 /* Image upload */
 img {

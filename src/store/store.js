@@ -1,18 +1,26 @@
-// import { createStore } from 'react-redux'
+import { createStore, applyMiddleware, compose, bindAction } from 'redux';
+import { logger } from 'redux-logger';
 
-// const store = {
-//   posts: true,
-//   postList: [1, 2, 3, 4, 5],
-//   title: '',
-//   desc: '',
-//   text: '',
-//   author: '',
-//   date: new Date(),
-//   image: '',
-// };
+import rootReducer from '../reducers/index';
 
-// store.subscribe(() => {
-//   console.log('store updated');
-// });
+// dummy data
+import posts from '../data/posts';
 
-// export default store;
+/** default state */
+const defaultState = {
+  posts,
+};
+
+/** CreateStore */
+const store = createStore(rootReducer,
+  defaultState,
+  compose(applyMiddleware(logger),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  ));
+
+store.subscribe(() => {
+  console.log('store updated', store.getState());
+});
+
+
+export default store;

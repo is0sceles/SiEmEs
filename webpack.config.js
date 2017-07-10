@@ -12,6 +12,7 @@ const config = {
     filename: 'bundle.js',
     publicPath: '/app/',
   },
+  devtool: 'inline-source-map',
   module: {
     loaders: [
       {

@@ -3,6 +3,18 @@ import * as types from './actionTypes';
 
 /** Actions */
 
+// add post
+export function addPost(author, title, comment, image) {
+  console.log('postdata action dispatched');
+  return {
+    type: types.ADD_POST,
+    author,
+    title,
+    comment,
+    image,
+  };
+}
+
 export function getUser() {
   // return dispatch () {
   //   // fetch and handle user data
@@ -29,3 +41,4 @@ export function itemsFetchDataSuccess(items) {
     items,
   };
 }
+
